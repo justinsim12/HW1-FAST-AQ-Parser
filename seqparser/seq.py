@@ -10,7 +10,8 @@ def transcribe(seq: str, reverse: bool = False) -> str:
     Write a function that will transcribe (replace DNA sequence to RNA
     by replacing all 'T' to 'U') in an input sequence
     """
-    pass
+    return seq.replace('T','U')
+
 
 def reverse_transcribe(seq: str) -> str:
     """
@@ -19,4 +20,7 @@ def reverse_transcribe(seq: str) -> str:
     """
     # Hey this is my comment
     # Again!
-    pass
+    # Used chat
+    for key, value in TRANSCRIPTION_MAPPING.items():
+        seq = seq.replace(key, value)
+    return seq
