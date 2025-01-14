@@ -23,4 +23,4 @@ def reverse_transcribe(seq: str) -> str:
     # Used chat
     for key, value in TRANSCRIPTION_MAPPING.items():
         seq = seq.replace(key, value)
-    return seq
+    return seq[::-1]

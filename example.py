@@ -17,23 +17,25 @@ def main():
         
     # For each record of FastaParser, Transcribe the sequence
     # and print it to console
-    for record in fasta_parser:
-        print(transcribe(record[1]))
+    # for record in fasta_parser:
+    #     print(transcribe(record[1]))
        
     # For each record of FastqParser, Transcribe the sequence
     # and print it to console
-    for record in fastq_parser:
-        print(transcribe(record[1]))
+    # for record in fastq_parser:
+    #     print(transcribe(record[1]))
 
     # For each record of FastaParser, Reverse Transcribe the sequence
     # and print it to console
-    for record in fasta_parser:
-        print(reverse_transcribe(record[1]))
+    # for record in fasta_parser:
+    #     print(reverse_transcribe(record[1]))
        
     # For each record of FastqParser, Reverse Transcribe the sequence
     # and print it to console
     for record in fastq_parser:
+        print(record[1])
         print(reverse_transcribe(record[1]))
+        break
 
 
 """
