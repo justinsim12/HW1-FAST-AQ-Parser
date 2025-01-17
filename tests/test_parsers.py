@@ -34,7 +34,7 @@ def test_FastaParser():
     provided in /tests/bad.fa and /tests/empty.fa
     """
     # Read in fasta file
-    fasta_file = 'data/test.fq' # if this was a fastq file, an AssertionError is raised
+    fasta_file = 'data/test.fa' # if this was a fastq file, an AssertionError is raised
     parser_obj = FastaParser(fasta_file)
     file_lines = [record for record in parser_obj]
 
