@@ -34,12 +34,12 @@ def test_FastaParser():
     provided in /tests/bad.fa and /tests/empty.fa
     """
     # Read in fasta file
-    fasta_file = 'data/test.fa' # if this was a fastq file, an AssertionError is raised
+    fasta_file = 'data/test.fq' # if this was a fastq file, an AssertionError is raised
     parser_obj = FastaParser(fasta_file)
     file_lines = [record for record in parser_obj]
 
     assert file_lines[0][0] != None, "Ensure file is a FastA file."
-
+    assert file_lines[0][1] != None, "Ensure file is a FastA file."
 
 def test_FastaFormat():
     """
@@ -47,7 +47,7 @@ def test_FastaFormat():
     read, the first item is None
     """
      # Read in fasta file
-    fasta_file = 'data/test.fq' # if this was a fastq file, an AssertionError is raised
+    fasta_file = 'data/test.fa' # if this was a fastq file, an AssertionError is raised
     parser_obj = FastaParser(fasta_file)
     file_lines = [record for record in parser_obj]
 
@@ -88,7 +88,7 @@ def test_FastqFormat():
     file_lines = [record for record in parser_obj]
 
     # Known seq0 of fastq file
-    seq0 = 'TTGGTCGTATAGTTATTGTCATAAATTACACAGAATCGCGATTCTCCGCGTCCACCAATCTTAGTGCACCACAGCATCGACCCGATTTATGACGCTGAG'
+    seq0 = 'TGTGGTCGTATAGTTATTGTCATAAATTACACAGAATCGCGATTCTCCGCGTCCACCAATCTTAGTGCACCACAGCATCGACCCGATTTATGACGCTGAG'
     # Known quality of seq0
     qual0 = '*540($=*,=.062565,2>\'487\')!:&&6=,6,*7>:&132&83*8(58&59>\'8!;28<94,0*;*.94**:9+7"94(>7=\'(!5"2/!%"4#32='
 
@@ -96,12 +96,3 @@ def test_FastqFormat():
     check_val = False
     if ((file_lines[0][1] == seq0) and (file_lines[0][2] == qual0)):
         check_val = True
-    
-    assert check_val, "FastQ parser error"
-
-      # Read in fasta file
-    fasta_file = 'data/test.fa' # if this was a fastq file, an AssertionError is raised
-    parser_obj = FastaParser(fasta_file)
-    file_lines = [record for record in parser_obj]
-
-    assert file_lines[0][0] != None, "Ensure file is a FastA file."

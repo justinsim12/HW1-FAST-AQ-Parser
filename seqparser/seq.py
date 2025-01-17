@@ -20,7 +20,9 @@ def reverse_transcribe(seq: str) -> str:
     """
     # Hey this is my comment
     # Again!
-    # Used chat
+    #Used chat
     for key, value in TRANSCRIPTION_MAPPING.items():
         seq = seq.replace(key, value)
+
+
     return seq[::-1]

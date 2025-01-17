@@ -36,6 +36,7 @@ def main():
         print(record[1])
         print(reverse_transcribe(record[1]))
         break
+    
 
 
 """
