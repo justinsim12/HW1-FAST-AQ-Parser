@@ -96,3 +96,5 @@ def test_FastqFormat():
     check_val = False
     if ((file_lines[0][1] == seq0) and (file_lines[0][2] == qual0)):
         check_val = True
+
+    assert check_val, "FastQ format error"
